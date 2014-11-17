@@ -1,0 +1,25 @@
+{
+  "name": "augustctl",
+  "version": "0.0.1",
+  "description": "Controller for August Smart Lock",
+  "author": "Dan Walters <dan@walters.io>",
+  "license": "MIT",
+  "main": "august.js",
+  "bin": "./cli.js",
+  "keywords": [
+    "august",
+    "smartlock",
+    "bluetooth"
+  ],
+  "dependencies": {
+    "bluebird": "^2.3.10",
+    "debug": "^2.1.0",
+    "noble": "^0.3.6",
+    "underscore": "^1.7.0",
+    "yargs": "^1.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/sretlawd/augustctl/augustctl.git"
+  }
+}
