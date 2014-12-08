@@ -1,3 +1,5 @@
+'use strict';
+
 // Decrypts a btsnoop_hci.log from an Android device (enabled in developer options.)
 
 // First use tshark to create a text log from a hci capture:

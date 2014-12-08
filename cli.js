@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var Lock = require('./lock');
+var Lock = require('./lib/lock');
 var noble = require('noble');
 
 var argv = require('yargs')
