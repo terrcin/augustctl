@@ -9,7 +9,7 @@ var hexEncoded = /[0-9A-F]+(?=\<\/string\>)/.exec(prefs)[0];
 var cipherText = new Buffer(hexEncoded, 'hex');
 
 // decrypt
-const key = new Buffer('August#@3417r\0\0\0', 'utf8');
+var key = new Buffer('August#@3417r\0\0\0', 'utf8');
 var cipher = crypto.createDecipheriv('aes-128-ecb', key, '');
 cipher.setAutoPadding(false);
 var plaintext = cipher.update(cipherText) + cipher.final();
