@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var Lock = require('./lib/lock');
 var noble = require('noble');
 
@@ -7,7 +9,6 @@ var argv = require('yargs')
   .usage('Control an August Smart Lock.\nUsage: $0 [command]')
   .example('$0 lock', 'closes the lock')
   .example('$0 unlock', 'opens the lock')
-  .describe('config', 'configuration file (default is $HOME/.config/augustctl.json)')
   .check(function(argv) {
     if (argv._.length !== 1) {
       return 'must specify an operation to perform';
@@ -20,7 +21,7 @@ var argv = require('yargs')
   })
   .argv;
 
-var config = require('./config')(argv.config);
+var config = require(process.env.AUGUSTCTL_CONFIG || './config.json');
 
 noble.on('stateChange', function(state) {
   if (state === 'poweredOn') {

@@ -73,5 +73,5 @@ function decodeLog(offlineKey, filename) {
   });
 }
 
-var config = require('../config')();
+var config = require(process.env.AUGUSTCTL_CONFIG || '../config.json');
 decodeLog(config.offlineKey, process.argv[2]);
